@@ -21,7 +21,7 @@ SOFTWARE.
 """
 
 import json, asyncio, aiohttp
-from models import Term
+from .models import Term
 
 class Client:
 
