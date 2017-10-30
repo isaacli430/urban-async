@@ -33,9 +33,11 @@ class Client:
 
     async def get_term(self, term: str):
         term = term.lower().replace(" ", "+")
-        async with self.session as session:
-            async with session.get("http://api.urbandictionary.com/v0/define?term={}".format(term)) as resp:
-                data = resp.json()
+        async with self.session.get("http://api.urbandictionary.com/v0/define?term={}".format(term)) as resp:
+            try:
+                data = await resp.json()
+            except:
+                raise ConnectionError("API is down at the moment. Please be patient")
 
         if data['result_type'] == "no_results":
             raise LookupError("Term does not exist.")
