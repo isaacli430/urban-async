@@ -41,6 +41,7 @@ class Term:
             self.author = data['author']
             self.id = data['defid']
             self.word = data['word']
+            self.example = data['example']
 
         def __repr__(self):
             return "<Definition of {}>".format(self.word)
