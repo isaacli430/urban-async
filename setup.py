@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='urban-async',
-    version='0.1.4a',
+    version='0.1.5a',
     description='An async Python API wrapper for Urban Dictionary',
     long_description='An async Python API wrapper for Urban Dictionary',
     url='https://github.com/kwugfighter/urbanasync',
