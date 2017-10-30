@@ -23,6 +23,7 @@ SOFTWARE.
 class Term:
 
     def __init__(self, data):
+        self.data = data
         self.tags = data['tags']
         self.result_type = data['result_type']
         self.sound_urls = data['sounds']
@@ -46,3 +47,7 @@ class Term:
 
         def __str__(self):
             return self.word
+
+    @property
+    def definitions(self):
+        return [self.Definition(definition) for definition in self.data['list']]
